@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff2a8;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    /* color: #fffffe; Color amarillo */
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    /* margin: 10px 0; */
+    /* color: #fafaf7; Color amarillo */
+}
+
+input {
+    width: 70%;
+    padding: 8px;
+    /* margin: 8px 0; */
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.boton {
+    background-color: #ffd700; /* Color amarillo */
+    border: none;
+    /* color: white; */
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+    
+    width: 100px;
+    height: 30px;
+
+}
+
+.bt{
+    background-color: #ffd700; /* Color amarillo */
+    border: none;
+    /* color: white; */
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 25%;
+    display: inline-block;
+    
+    width: 100px;
+    height: 30px;
+
+}
+
+.boton:hover {
+    background-color: #ffc107; /* Cambio de color al pasar el mouse */
+}
+
+.bt:hover {
+    background-color: #ffc107; /* Cambio de color al pasar el mouse */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 15px;
+    padding-top: 20px;
+    background-color: white;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+#data {
+    margin-right: 15px;
+    text-align: center;
+}
+
+#grafico {
+    height: 250px;
+    width: 500px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Agregado para cambiar el color del nombre de la clase .boton en el gráfico */
+.canvasjs-chart-credit {
+    color: #ffd700 !important;
+}

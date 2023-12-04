@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- Agrega estas líneas en el encabezado del HTML -->
+  <!-- Asegúrate de agregar estas líneas antes de tu script principal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script src="pareto.js"></script>
+<link rel="stylesheet" href="pareto.css">
+</head>
+<body id="prueba">
+  <h1>DIAGRAMA DE PARETO</h1>
+<form id="form">
+  <label for="cantidad">Cantidad de elementos:</label>
+  <input id="cantidad" type="number" min="1" value="1">
+  <button id="generar" type="button">Generar</button>
+  <div id="contenedor"></div>
+  <button id="enviar" type="button" style="display: none;">Enviar</button>
+</form>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluye la biblioteca de Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Incluye html2canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+
+    <title>Calculadora de Productividad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="izquierda">
+            <h1>CÁLCULO DE LA PRODUCTIVIDAD PARA LA EMPRESA
+                <script>
+                    // Obtener el valor de 'empresa' de localStorage
+                    var empresa = localStorage.getItem('empresa');
+        
+                    // Verificar si se proporcionó un valor para 'empresa' y mostrarlo
+                    if (empresa) {
+                        document.write("'" + empresa + "'");
+                    } else {
+                        document.write("Nombre de empresa no proporcionado");
+                    }
+                </script>
+            </h1>
+
+            <div>
+                <h2>Sistema Antiguo</h2>
+                <label for="empleadosAntiguo">Empleados:</label>
+                <input type="number" id="empleadosAntiguo">
+                <br>
+                <label for="horasTrabajoAntiguo">Horas de trabajo por día:</label>
+                <input type="number" id="horasTrabajoAntiguo">
+                <br>
+                <label for="costoManoObraAntiguo">Costo de mano de obra diario:</label>
+                <input type="number" id="costoManoObraAntiguo">
+                <br>
+                <label for="gastosGeneralesAntiguo">Gastos generales diarios:</label>
+                <input type="number" id="gastosGeneralesAntiguo">
+                <br>
+                <label for="pedidosAntiguo">Pedidos procesados diariamente:</label>
+                <input type="number" id="pedidosAntiguo">
+            </div>
+
+            <div>
+                <h2>Sistema Nuevo</h2>
+                <label for="empleadosNuevo">Empleados:</label>
+                <input type="number" id="empleadosNuevo">
+                <br>
+                <label for="horasTrabajoNuevo">Horas de trabajo por día:</label>
+                <input type="number" id="horasTrabajoNuevo">
+                <br>
+                <label for="costoManoObraNuevo">Costo de mano de obra diario:</label>
+                <input type="number" id="costoManoObraNuevo">
+                <br>
+                <label for="gastosGeneralesNuevo">Gastos generales diarios:</label>
+                <input type="number" id="gastosGeneralesNuevo">
+                <br>
+                <label for="capacidadProcesamientoNuevo">Nueva capacidad de procesamiento diario:</label>
+                <input type="number" id="capacidadProcesamientoNuevo">
+            </div>
+
+            <button class="boton" onclick="calcularProductividad()">Calcular Productividad</button>
+
+            <div id="resultadoCalculos">
+                <h2>Cálculos de Productividad</h2>
+            </div>
+        </div>
+        <div class="derecha">
+            <!-- Primer Canvas para el gráfico de productividad de un solo factor -->
+            <div class="grafico-container1">
+                <canvas id="graficoUnSoloFactor" class="grafico" width="600" height="300"></canvas>
+            </div>
+
+            <!-- Segundo Canvas para el gráfico de productividad de múltiples factores -->
+            <div class="grafico-container">
+                <canvas id="graficoMultiplesFactores" class="grafico" width="600" height="300"></canvas>
+            </div>
+            <!-- Nuevos botones -->
+            <div class="contenedor-botones">
+                <button onclick="guardar()">Guardar Datos</button>
+                <button onclick="volverAlInicio()">Volver al Inicio</button>
+                <!-- Nuevo enlace para mostrar los datos guardados -->
+                <button onclick="mostrar()" >Mostrar Datos Guardados</button>
+
+            </div>
+        </div>
+    </div>
+    <script>function mostrar(){
+        window.location.href = "mostrar-datos.html";
+    }</script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

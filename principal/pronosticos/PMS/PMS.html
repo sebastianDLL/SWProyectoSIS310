@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAsfkO9to7IkmQF9BQ-XADzxGd8BcdsO-Q",
+        authDomain: "sis310-6a0ee.firebaseapp.com",
+        projectId: "sis310-6a0ee",
+        storageBucket: "sis310-6a0ee.appspot.com",
+        messagingSenderId: "742071827732",
+        appId: "1:742071827732:web:22509e4e430eaa3af79601",
+        measurementId: "G-CRNVQTGG4J"
+      };
+    
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="PMS.css">
+    
+</head>
+
+<body>
+    
+    <h1>PROMEDIO MOVIL SIMPLE</h1>
+
+    <form id="inputForm">
+        <label for="demanda">Ingresa la Demanda (separada por comas):</label><br>
+        <input type="text" id="demanda" name="demanda"><br>
+        <label for="N">NUMERO DE PERIODOS N: </label><br>
+        <input type="number" id="N" name="N" min="1"><br>
+        <input class="bt" type="submit" value="Calcular">
+        <button class="boton" onclick="menu()">Volver al menu</button>
+    </form>
+
+    <div  class="container">
+        <div>
+            <table id="data">
+                <!-- Aquí se agregarán las filas de datos -->
+            </table>
+
+            <p id="mad"></p>
+            <p id="mse"></p>
+            <p id="made"></p>
+        </div>
+
+        <div id="grafico">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+<script src="scriptPMS.js"></script>
+
+</body>
+
+</html>

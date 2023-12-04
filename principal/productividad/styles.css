@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    border: 0;
+    margin: 0;
+    margin-left: 15px;
+    background-color: rgb(236, 218, 218);
+    height: 700px;
+    
+}
+
+.main {
+    display: flex;
+
+}
+
+.izquierda {
+    width: 40%;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.derecha {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: white; /* Color blanco para el texto */
+    background-color: #C81010; /* Color rojo oscuro para el fondo */
+    font-family: Arial, sans-serif; /* Tipo de letra Arial o similar */
+    text-align: center; /* Alineación centrada */
+    padding: 20px; /* Espacio alrededor del texto */
+    align-self: flex-start;
+    margin-right: 18px;
+}
+
+input {
+    margin: 2.5px;
+}
+
+.grafico-container {
+    width: 100%;
+    text-align: center;
+    /* margin: top 20px; */
+}
+
+.grafico-container1 {
+    width: 100%;
+    text-align: center;
+    margin: top 20%;
+}
+
+.grafico {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.boton{
+    margin: 5px;
+    width: 513.6px;
+    
+}
+
+button {
+    color: white; /* Color blanco para el texto */
+    background-color: #C81010; /* Color rojo claro para el fondo */
+    border: none; /* Sin borde */
+    font-size: 20px; /* Tamaño de letra grande */
+    cursor: pointer; /* Cambiar el cursor a una mano */
+    margin: 10px; /* Espacio alrededor del botón */
+    font-weight: bold;
+    padding: 10px;
+}
+
+a {
+    color: white; /* Color blanco para el texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 20px; /* Tamaño de letra grande */
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    text-align: center;  
+
+}
+
+.contenedor-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+#enlace,#botonempezar,
+#enlaceMenu {
+    background-color: #C81010; /* Color rojo anaranjado para el fondo */
+    display: flex; /* Hacer que los elementos sean contenedores flexibles */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+    width: 300px;
+    height: 150px;
+    text-align: center; /* Centrar el texto dentro del contenedor */
+}
+
+/* Estilos para el contenedor flexible */
+#contenedor {
+    display: flex; /* Hacer que el elemento sea un contenedor flexible */
+    flex-direction: row; /* Hacer que los elementos hijos se distribuyan en filas (columnas) */
+    justify-content: space-between; /* Hacer que haya espacio entre las columnas */
+    align-items: center; /* Hacer que las columnas se alineen verticalmente al centro */
+}
+
+/* Estilos para la columna de los botones */
+#contenedor > div:first-child {
+    width: 40%; /* Hacer que la columna ocupe el 40% del ancho del contenedor */
+    display: flex; /* Hacer que el elemento sea un contenedor flexible */
+    flex-direction: column; /* Hacer que los elementos hijos se distribuyan en columnas (filas) */
+    justify-content: space-between; /* Hacer que haya espacio entre las filas */
+    align-items: center; /* Hacer que las filas se alineen horizontalmente al centro */
+}
+
+/* Estilos para la columna de la imagen */
+#contenedor > div:last-child {
+    width: 60%; /* Hacer que la columna ocupe el 60% del ancho del contenedor */
+    text-align: right; /* Hacer que la imagen se alinee a la derecha dentro de la columna */
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Guardados</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(236, 218, 218);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #datosGuardados {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .empresa {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #090909;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        button {
+            background-color: #ea0909;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .botoninicio {
+            background-color: #09ea09;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .botoncalculos {
+            background-color: #09eaea;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Datos Guardados <br> 2023</h1>
+
+    <div id="datosGuardados">
+        <!-- Aquí se mostrarán los datos guardados -->
+    </div>
+    <div>
+        <button onclick="eliminarTodo()">ELIMINAR TODO</button>
+        <button class="botoninicio" onclick="volverAlInicio()">INICIO</button>
+        <button class="botoncalculos" onclick="Empezar()">INGRESAR DATOS</button>
+    </div>
+
+    <script>
+        // Recuperar los datos guardados desde localStorage
+        var datosGuardados = localStorage.getItem("datosEmpresas");
+
+        // Verificar si hay datos guardados
+        if (datosGuardados) {
+            // Convertir la cadena JSON a un array de objetos
+            var datosEmpresas = JSON.parse(datosGuardados);
+
+            // Mostrar los datos en la página
+            mostrarDatos(datosEmpresas);
+        } else {
+            // Mostrar un mensaje si no hay datos guardados
+            document.getElementById("datosGuardados").innerHTML = "<p>No hay datos guardados.</p>";
+        }
+
+        // Función para mostrar datos en la página
+        function mostrarDatos(datosEmpresas) {
+            var contenidoHTML = "";
+
+            // Iterar sobre cada objeto de datos y construir el HTML
+            datosEmpresas.forEach(function (datosEmpresa, index) {
+                contenidoHTML += `
+                    <div class="empresa" id="empresa${index + 1}">
+                        <p><strong>Nombre de la Empresa:</strong> ${datosEmpresa.nombreEmpresa}</p>
+                        <p><strong>Empleados Antiguo:</strong> ${datosEmpresa.empleadosAntiguo}</p>
+                        <p><strong>Horas de Trabajo Antiguo:</strong> ${datosEmpresa.horasTrabajoAntiguo}</p>
+                        <p><strong>Costo Mano de Obra Antiguo:</strong> ${datosEmpresa.costoManoObraAntiguo}</p>
+                        <p><strong>Gastos Generales Antiguo:</strong> ${datosEmpresa.gastosGeneralesAntiguo}</p>
+                        <p><strong>Pedidos Antiguo:</strong> ${datosEmpresa.pedidosAntiguo}</p>
+                        <p><strong>Empleados Nuevo:</strong> ${datosEmpresa.empleadosNuevo}</p>
+                        <p><strong>Horas de Trabajo Nuevo:</strong> ${datosEmpresa.horasTrabajoNuevo}</p>
+                        <p><strong>Costo Mano de Obra Nuevo:</strong> ${datosEmpresa.costoManoObraNuevo}</p>
+                        <p><strong>Gastos Generales Nuevo:</strong> ${datosEmpresa.gastosGeneralesNuevo}</p>
+                        <p><strong>Capacidad de Procesamiento Nuevo:</strong> ${datosEmpresa.capacidadProcesamientoNuevo}</p>
+                        <p><strong>Cambio Porcentual 1 Solo Factor:</strong> ${datosEmpresa.cambioPorcentualUnSoloFactor}</p>
+                        <p><strong>Cambio Porcentual Multiple Factores:</strong> ${datosEmpresa.cambioPorcentualMultiplesFactores}</p>
+                        <button onclick="eliminarDatos(${index})">Eliminar</button>
+                    </div>
+                `;
+            });
+
+            // Actualizar el contenido del div
+            document.getElementById("datosGuardados").innerHTML = contenidoHTML;
+        }
+    </script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>(MPS)</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAsfkO9to7IkmQF9BQ-XADzxGd8BcdsO-Q",
+      authDomain: "sis310-6a0ee.firebaseapp.com",
+      projectId: "sis310-6a0ee",
+      storageBucket: "sis310-6a0ee.appspot.com",
+      messagingSenderId: "742071827732",
+      appId: "1:742071827732:web:22509e4e430eaa3af79601",
+      measurementId: "G-CRNVQTGG4J"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>&nbsp;PLAN MAESTRO DE PRODUCCION (MPS)</h1>
+  <div id="body">
+    <div id="mainContainer">
+      <form id="inputForm" style="height: 440px;">
+        <!-- ... (tu formulario actual) ... -->
+
+        <label for="inventarioInicial">Inventario Inicial:</label>
+        <input type="number" id="inventarioInicial" >
+        <br>
+
+        <label for="pronosticos">Pronósticos (separados por comas):</label>
+        <input type="text" id="pronosticos" >
+        <br>
+
+        <label for="nroPeriodos">Número de Periodos:</label>
+        <input type="number" id="nroPeriodos" >
+        <br>
+
+        <label for="pedidos">Pedidos (separados por comas):</label>
+        <input type="text" id="pedidos" >
+        <br>
+
+        <input type="submit" value="Generar Tabla">
+
+        <div id="buttonContainer" style="margin-top: 20px;">
+          <button id="Button" onclick="Guardar()">Guardar</button><br>
+          <button id="Button" onclick="Mostrar()">Mostrar Datos</button><br>
+          <button id="Button" onclick="salir()">Salir</button>
+        </div>
+
+      </form>
+
+      <div class="resultContainer" id="resultContainer"></div>
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    overflow-y: hidden; /* Bloquea el scroll vertical */
+}
+
+#body {
+    display: flex;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #008000;
+}
+
+#mainContainer {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+form {
+    width: 30%;
+    max-width: 400px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #008000;
+    color: #fff;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #005700;
+}
+
+#resultContainer {
+    width: 70%;
+    overflow-x: auto;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #008000;
+    color: #fff;
+}
+
+td {
+    background-color: #eafaea;
+}
+
+/* Estilo para las celdas con DPP positivo */
+td:nth-child(7n+6):not(:empty) {
+    background-color: #aaffaa;
+}
+
+/* Estilo para las celdas con DPP negativo */
+td:nth-child(7n+6):not(:empty):not(:contains("-")) {
+    background-color: #ffaaaa;
+}
+
+#Button{
+    background-color: #008000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}

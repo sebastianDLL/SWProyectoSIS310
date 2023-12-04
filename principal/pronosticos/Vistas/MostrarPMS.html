@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAsfkO9to7IkmQF9BQ-XADzxGd8BcdsO-Q",
+            authDomain: "sis310-6a0ee.firebaseapp.com",
+            projectId: "sis310-6a0ee",
+            storageBucket: "sis310-6a0ee.appspot.com",
+            messagingSenderId: "742071827732",
+            appId: "1:742071827732:web:22509e4e430eaa3af79601",
+            measurementId: "G-CRNVQTGG4J"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mostrar.css">
+    <title>Galeria</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../PMS/PMS.html">Promedio Móvil Simple</a></li>
+            <li><a href="../PMSP/PMSP.html">Promedio Móvil Ponderado</a></li>
+            <li><a href="../SES/SES.html">Suavizado Exponencial</a></li>
+            <li><a href="../RL/RL.html">Regresión Lineal</a></li>
+        </ul>
+    </nav>
+
+    <nav style="margin-left: 0px;" class="navbar">
+        <ul>
+            <li><a href="../inicio/index.html">Salir</a></li>
+            <li><a href="../PMS/PMS.html">Ingresar Datos</a></li>
+        </ul>
+    </nav>
+
+    <h1>IMAGENES GUARDADAS PARA PMS</h1>
+    <div>
+        <div id="imagesContainer"></div>
+
+        <script>
+            // Obtener una referencia a la carpeta de imágenes en Firebase Storage
+            var storageRef = firebase.storage().ref('imagesPMS');
+
+            // Obtener una referencia al contenedor de imágenes en el HTML
+            var imagesContainer = document.getElementById('imagesContainer');
+
+            // Obtener una lista de todas las imágenes en la carpeta
+            storageRef.listAll().then(function (result) {
+                result.items.forEach(function (imageRef) {
+                    // Obtener la URL de descarga de cada imagen
+                    imageRef.getDownloadURL().then(function (url) {
+                        // Obtener el nombre de archivo de cada imagen
+                        var name = imageRef.name;
+
+                        // Crear un elemento h3 para cada título
+                        var h3 = document.createElement('h3');
+                        h3.textContent = name;
+
+                        // Crear un elemento img para cada imagen
+                        var img = document.createElement('img');
+                        img.src = url;
+                        img.width = 800;  // Ajusta esto al tamaño que prefieras
+
+                        // Crear un botón para eliminar la imagen
+                        var deleteButton = document.createElement('button');
+                        deleteButton.className = 'boton';
+                        deleteButton.textContent = 'Eliminar';
+                        deleteButton.onclick = function () {
+                            deleteImage(imageRef);
+                        };
+
+                        // Agregar el elemento img y el botón al contenedor de imágenes
+                        imagesContainer.appendChild(h3);
+                        imagesContainer.appendChild(img);
+                        imagesContainer.appendChild(deleteButton);
+
+                    });
+                })
+            }).catch(function (error) {
+                // Manejar cualquier error
+            });
+
+            function deleteImage(imageRef) {
+                // Eliminar la imagen de Firebase Storage
+                imageRef.delete().then(function () {
+                    // Actualizar la vista después de eliminar la imagen
+                    location.reload();
+                }).catch(function (error) {
+                    console.error("Error al eliminar la imagen", error);
+                });
+            }
+
+            function menu() {
+                location.href = "../inicio/index.html";
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>
