@@ -15,7 +15,7 @@ function generateTable() {
     .map(Number);
   var nroPeriodos = parseInt(document.getElementById("nroPeriodos").value);
   var pedidos = document.getElementById("pedidos").value.split(",").map(Number);
-  var cantidadPaquetes = 1000;
+  var cantidadPaquetes = parseInt(document.getElementById("cantidadPaquetes").value); // Obtener el número de paquetes desde el input
 
   var data = {
     Periodo: Array.from({ length: nroPeriodos }, (_, i) => i + 1),

@@ -10,19 +10,28 @@
   <link rel="stylesheet" href="css/responsee.css">
   <!-- CUSTOM STYLE -->
   <link rel="stylesheet" href="css/template-style.css">
-  <link href="https://fonts.googleapis.com/css?family=Barlow:100,300,400,700,800&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow:100,300,400,700,800&subset=latin-ext" rel="stylesheet">
 
   <style>
     /* Nueva regla CSS para la clase "pdf" */
     .pdf {
       position: fixed;
-      bottom: 10px; /* Ajusta la posición vertical según tus preferencias */
+      bottom: 40px; /* Ajusta la posición vertical según tus preferencias */
       right: 10px; /* Ajusta la posición horizontal según tus preferencias */
       color: black;
     }
     h4{
       color: black;
       margin-left: 5px;
+    }
+    /* Nuevas reglas CSS para dividir los enlaces */
+    .links-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .links-container div {
+      display: flex;
+      flex-direction: column;
     }
   </style>
 </head>
@@ -76,23 +85,28 @@
           PRODUCCION</h3>
       </a>
     </section>
-    <h4 style="color:black;">
-      Ver estructura del <a style="color:black; text-decoration:underline"
-        href="Untitled Workspace.png" target="_blank">proyecto</a><br>
-    </h4>
-    <h4 style="color:black;">
-      Desarrollado por: <a style="color:black; text-decoration:underline"
-        href="https://www.linkedin.com/in/delgadillo-llanos-juan-sebastian" target="_blank">Delgadillo-Sebastian</a><br>
-    </h4>
-    <h4 style="color:black;" class="pdf">
-      Descargar descripción: <a style="color:black; text-decoration:underline"
-        href="./Descripcion-Temas.pdf" target="_blank">Temas</a><br>
-    </h4>
-    <!-- <h4 style="color:black;" class="pdf">
-      Descargar: <a style="color:black; text-decoration:underline"
-        href="" target="_blank">Manual de Usuario</a><br>
-    </h4> -->
-    <script type="text/javascript" src="js/responsee.js"></script>
+    <div class="links-container">
+      <div>
+        <h4 style="color:black;">
+          Ver estructura: <a style="color:black; text-decoration:underline"
+            href="estructura.png" target="_blank">Proyecto</a><br>
+        </h4>
+        <h4 style="color:black;" >
+          Descargar: <a style="color:black; text-decoration:underline"
+            href="./Manual-de-Usuario.pdf" target="_blank">Manual de Usuario</a><br>
+        </h4>
+      </div>
+      <div>
+        <h4 style="color:black;">
+         Descripción de los: <a style="color:black; text-decoration:underline"
+            href="./Descripcion-Temas.pdf" target="_blank">Temas</a><br>
+        </h4>
+        <h4 style="color:black;">
+          Desarrollado por: <a style="color:black; text-decoration:underline"
+            href="https://www.linkedin.com/in/delgadillo-llanos-juan-sebastian/" target="_blank">Sebastian Delgadillo</a><br>
+        </h4>
+      </div>
+    </div>
+  </main>
 </body>
-
 </html>
